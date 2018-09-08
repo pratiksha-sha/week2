@@ -1,0 +1,153 @@
+li{
+  list-style-type:none;
+}
+
+img{
+  width:200px;
+  padding-left: 30px;
+  padding-right: 30px;  
+}
+  
+h1,h2,h3{
+ text-align: center;
+}
+
+
+/* Float  */
+#grid-floats {
+    display:block;
+    width:100%;
+
+  }
+  
+  #grid-floats .grid-item {
+    float:left;
+    width:22%;
+    height:340px;
+    display:block;
+    border: 2px solid red;
+    margin:10px 0 0 10px;
+   
+  }
+ 
+  #grid-floats .grid-item:nth-child(1){
+    width:45%;
+  } 
+  h2{
+    font-size: 30px;
+  }
+ 
+
+/* Flex */
+  
+#grid-flex {
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  
+}
+
+.grid-item{ 
+  border: 2px solid lightblue;
+  margin:10px 0 0 10px;
+  display: inline-block;
+  width:22%;
+  flex-grow: 1;
+  
+}
+
+.grid-item:nth-child(1){
+  width:44%;
+}
+
+
+  /* for tabled */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    html {
+      background-color:brown;
+    }
+
+    .grid-item{        
+        float:none;
+        overflow:hidden;
+        width:100%;
+        text-align:center;
+        
+      }
+
+    /*float*/
+    #grid-floats .grid-item:nth-child(-n + 2){
+      width:46%;
+  }
+    
+  #grid-floats .grid-item:nth-last-child(-n +12){
+    width:30%;
+  }
+}
+/*flex box */
+  
+  .grid-item:nth-last-child(-n +12){
+    width:30%;
+  }
+  .grid-item:nth-child(-n + 2){
+    width:46%;
+
+  /* for desktop */
+  @media only screen and (min-width: 1024px) {
+    html {
+      background-color: green;
+    }
+    img{
+      float:none;
+      overflow:hidden; 
+    }
+
+    #grid-floats .grid-item:nth-last-child(-n +3){
+      width:29.70%;
+    }
+    
+    .grid-item:nth-last-child(-n +3){
+     width:30%;
+    }
+    .grid-item:nth-last-child(-n + 12){
+      width:22%;
+  }
+}
+
+  /*  for mobile */
+  @media only screen and (min-width:320px) and (max-width:768px){
+    .grid-item{   
+      float:none;
+      overflow:hidden;
+      width:100%;
+      text-align:center;
+    } 
+  
+    img{
+      width:150px;
+    }
+
+  /*float*/
+    #grid-floats .grid-item:nth-child(1){
+    width:90%;
+    height:200px;
+    }
+
+    #grid-floats .grid-item:nth-last-child(-n +13){
+    width:43%;
+    height:350px;
+    }
+    #grid-floats .grid-item:nth-last-child(1){
+      width:90%;
+    }
+/*flex box */
+    .grid-item:nth-child(1){
+      width:90%;
+   }
+ 
+ .grid-item:nth-last-child(-n +13){
+   width:43%;
+   height:350px;
+ }
+}
